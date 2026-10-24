@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Crypto Brief — Weekly Crypto News</title>
+  <meta name="description" content="The biggest crypto stories, market moves and blockchain news — delivered to your inbox.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #08090c;
+      color: #f5f6f7;
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 32px;
+      padding: 7px 12px;
+      border: 1px solid #26282d;
+      border-radius: 999px;
+      color: #a3a6ad;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      background: #f7931a;
+      border-radius: 50%;
+      box-shadow: 0 0 14px rgba(247, 147, 26, 0.8);
+    }
+
+    h1 {
+      max-width: 680px;
+      margin: 0 auto 22px;
+      font-size: clamp(48px, 9vw, 84px);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+      font-weight: 760;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, #f7931a, #ffcf5c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      max-width: 540px;
+      margin: 0 auto 36px;
+      color: #92959d;
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .form {
+      display: flex;
+      gap: 8px;
+      width: 100%;
+      max-width: 510px;
+      margin: 0 auto;
+      padding: 6px;
+      background: #111216;
+      border: 1px solid #292b31;
+      border-radius: 12px;
+    }
+
+    input {
+      flex: 1;
+      min-width: 0;
+      padding: 14px 15px;
+      border: 0;
+      outline: none;
+      background: transparent;
+      color: white;
+      font-size: 14px;
+    }
+
+    input::placeholder {
+      color: #62656c;
+    }
+
+    button {
+      border: 0;
+      border-radius: 8px;
+      padding: 0 22px;
+      background: #f7931a;
+      color: #111;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background: #ffad42;
+      transform: translateY(-1px);
+    }
+
+    .small {
+      margin-top: 14px;
+      color: #555960;
+      font-size: 12px;
+    }
+
+    .success {
+      display: none;
+      max-width: 510px;
+      margin: 0 auto;
+      padding: 18px;
+      border: 1px solid rgba(247,147,26,0.35);
+      border-radius: 12px;
+      background: rgba(247,147,26,0.07);
+      color: #ffc066;
+      font-size: 14px;
+    }
+
+    .topics {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 55px;
+    }
+
+    .topic {
+      padding: 8px 13px;
+      border: 1px solid #22242a;
+      border-radius: 999px;
+      color: #73767d;
+      font-size: 12px;
+    }
+
+    footer {
+      margin-top: 55px;
+      color: #3d4046;
+      font-size: 11px;
+    }
+
+    @media (max-width: 560px) {
+      h1 {
+        font-size: 52px;
+      }
+
+      .form {
+        flex-direction: column;
+        padding: 7px;
+      }
+
+      input {
+        padding: 14px 12px;
+      }
+
+      button {
+        padding: 14px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <div class="badge">
+      <span class="dot"></span>
+      Crypto News Newsletter
+    </div>
+
+    <h1>
+      Crypto moves fast.<br>
+      <span>Stay ahead.</span>
+    </h1>
+
+    <p class="subtitle">
+      The biggest crypto stories, market moves, Bitcoin updates,
+      altcoin trends and blockchain news — curated into one quick email.
+    </p>
+
+    <form class="form" id="newsletterForm">
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter your email address"
+        required
+      >
+
+      <button type="submit">
+        Join free
+      </button>
+    </form>
+
+    <div class="success" id="success">
+      ✓ You're on the list. Your next crypto brief is coming soon.
+    </div>
+
+    <p class="small">
+      Free. No spam. Unsubscribe anytime.
+    </p>
+
+    <div class="topics">
+      <span class="topic">Bitcoin</span>
+      <span class="topic">Ethereum</span>
+      <span class="topic">Altcoins</span>
+      <span class="topic">Markets</span>
+      <span class="topic">Blockchain</span>
+      <span class="topic">DeFi</span>
+    </div>
+
+    <footer>
+      © 2026 Crypto Brief · Independent crypto news newsletter · Not financial advice.
+    </footer>
+
+  </main>
+
+  <script>
+    const form = document.getElementById("newsletterForm");
+    const success = document.getElementById("success");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      form.style.display = "none";
+      success.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
